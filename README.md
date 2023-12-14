@@ -22,17 +22,10 @@ Na pasta raíz execute o comando:
 ```bash
 $ npm install
 ```
-## Executar banco de dados
-
-Com o docker compose instalado, na pasta raíz execute o comando:
-
-```bash
-$ docker compose up
-```
 ## Executar aplicação
 
 Na pasta raíz execute o comando: 
 
 ```bash
-$ npm run dev
+$ npm start
 ```
