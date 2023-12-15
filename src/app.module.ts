@@ -1,13 +1,21 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+
 import { EnvModule } from './env/env.module';
 import { KafkaModule } from './kafka/kafka.module';
-import { TestConsumer } from './test.consumer';
+import { MessageConsumer } from './message.consumer';
+import { StaticModule } from './static/static.module';
+import { LogModule } from './log/log.module';
 
 @Module({
-  imports: [EnvModule, KafkaModule],
-  controllers: [AppController],
-  providers: [AppService, TestConsumer],
+  imports: [
+    EnvModule,
+    KafkaModule,
+    StaticModule,
+    LogModule
+  ],
+  controllers: [],
+  providers: [
+    MessageConsumer
+  ],
 })
 export class AppModule {}
