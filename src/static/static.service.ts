@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import * as fs from 'node:fs';
+
+import { S3Service } from '../s3/s3.service';
 
 interface MessageDTO {
   value: any;
@@ -10,8 +11,10 @@ interface MessageDTO {
 @Injectable()
 export class StaticService {
 
-  public generate(messageDto: MessageDTO): void {
-    
+  constructor(private s3Service: S3Service) {}
+
+  public async generate(messageDto: MessageDTO): Promise<void> {
+    await this.s3Service.save(messageDto);
   }
   
 }
