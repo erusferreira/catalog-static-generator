@@ -1,8 +1,8 @@
 import { Injectable, OnModuleInit } from "@nestjs/common";
 
-import { ConsumerService } from "./kafka/consumer.service";
-import { LogService } from "./log/log.service";
-import { StaticService } from "./static/static.service";
+import { ConsumerService } from "./infrastructure/kafka/consumer.service";
+import { LogService } from "./infrastructure/log/log.service";
+import { StaticService } from "./app/modules/static/static.service";
 
 @Injectable()
 export class MessageConsumer implements OnModuleInit {
