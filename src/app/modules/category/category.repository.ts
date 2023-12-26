@@ -8,9 +8,7 @@ export class CategoryRepository {
 
     public async getCategories(): Promise<Category[]> {
       try {
-        const categories = await this.categoryModel.find();
-        console.log('##### categories #####', categories);
-        return categories;
+        return await this.categoryModel.find();
       } catch (error) {
         throw new Error(error);
       }

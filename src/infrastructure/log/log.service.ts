@@ -9,12 +9,11 @@ export class LogService {
   public async save(message) {
     const receivedMessage = message.value.toString();
 
-    // TO DO: remove the magic numbers
     const logMessage = {
       id: uuidv4(),
       updatedAt: JSON.parse(receivedMessage).date,
-      merchantId: '654e427ca505d3d5790005e6',
-      catalogId: '655f827047e58254ad079abf',
+      merchantId: JSON.parse(receivedMessage).merchantId,
+      catalogId: JSON.parse(receivedMessage).catalogId,
       message: JSON.parse(receivedMessage).message
     }
 

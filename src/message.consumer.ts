@@ -19,7 +19,7 @@ export class MessageConsumer implements OnModuleInit {
       { 
         eachMessage: async ({ topic, partition, message}) => {          
           const messageDto = { 
-            value: message.value.toString(),
+            data: message.value.toString(),
             topic: topic.toString(),
             partition: partition.toString()
           }
