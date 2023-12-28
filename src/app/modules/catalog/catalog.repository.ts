@@ -60,21 +60,28 @@ export class CatalogRepository {
           {
             $group: {
               _id: "$_id",
+              name: { $first: "$name" },
+              description: { $first: "$description" },
+              merchant: { $first: "$merchant" },
+              is_active: { $first: "$is_active" },
+              created_at: { $first: "$created_at" },
+              updated_at: { $first: "$updated_at" },
               categories: {
                 $push: {
                   _id: "$categories._id",
                   name: "$categories.name",
-                  description: "$description",
-                  is_active: "$is_active",
+                  description: "$categories.description",
+                  is_active: "$categories.is_active",
                   catalog: "$catalog",
-                  created_at: "$created_at",
-                  updated_at: "$updated_at",
+                  created_at: "$categories.created_at",
+                  updated_at: "$categories.updated_at",
                   items: "$categories.items",
                 },
               },
             },
-          }
-        ]).exec();
+          },
+        ])
+        .exec();
       } catch (error) {
         throw new Error(`Not possible to aggregate catalog with category and its items: ${error}`)
       }

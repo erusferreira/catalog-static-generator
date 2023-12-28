@@ -1,5 +1,6 @@
 import { Injectable, Inject } from "@nestjs/common";
 import { S3 } from 'aws-sdk';
+import { createHmac } from 'node:crypto';
 
 import { S3ConfigOptions } from './s3-config-options.interface';
 
@@ -19,14 +20,22 @@ export class S3Service {
   }
 
   public async save(data?: any): Promise<void> {
+    const stringifiedData = JSON.stringify(data);
+    const hash = await this.generateHash(stringifiedData)
+
     const params: AWS.S3.PutObjectRequest = {
       Bucket: process.env.S3_BUCKET_NAME,
-      Key: 'static.json',
-      Body: JSON.stringify(data),
+      Key: await `static_${hash}.json`,
+      Body: stringifiedData,
       ContentType: 'application/json',
     };
-
     await this.s3.putObject(params).promise();
+  }
+
+  private async generateHash(data?: any): Promise<string> {
+    return createHmac('sha256', process.env.S3_HASH_SECRET)
+      .update(data)
+      .digest('hex');
   }
   
 }
