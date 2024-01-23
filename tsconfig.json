@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES6",
     "sourceMap": true,
     "outDir": "./dist",
     "incremental": true,
@@ -17,15 +17,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@app/*": ["app/*"],
-      "@domain/*": ["domain/*"],
-      "@config/*": ["config/*"],
-      "@infrastructure/*": ["infrastructure/*"]
-    }
+    "noFallthroughCasesInSwitch": false
+
   },
-  "include": [
-    "src",
-  ],
 }
