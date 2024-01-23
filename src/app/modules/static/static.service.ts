@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 
-import { S3Service } from '../../../infrastructure/s3/s3.service';
+import { S3Service } from '@infrastructure/s3/s3.service';
 import { CatalogRepository } from "../catalog/catalog.repository";
 
 interface changeNotificationDTO {

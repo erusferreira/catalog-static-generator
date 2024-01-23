@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { Merchant, MerchantSchema } from '../../../domain/entities/merchant.entity';
+import { Merchant, MerchantSchema } from '@domain/entities/merchant.entity';
 import { MerchantService } from './merchant.service';
 import { MerchantRepository } from './merchant.repository';
 

@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 
-import { Merchant } from '../../../domain/entities/merchant.entity';
+import { Merchant } from '@domain/entities/merchant.entity';
 import { MerchantRepository } from "./merchant.repository";
 
 @Injectable()

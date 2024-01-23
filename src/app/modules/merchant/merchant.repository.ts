@@ -1,7 +1,7 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
-import { Merchant } from '../../../domain/entities/merchant.entity';
+import { Merchant } from '@domain/entities/merchant.entity';
 
 export class MerchantRepository {
     constructor(@InjectModel(Merchant.name) private readonly merchantModel: Model<Merchant>) {}

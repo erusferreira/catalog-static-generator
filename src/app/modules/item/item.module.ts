@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { Item, ItemSchema } from '../../../domain/entities/item.entity';
+import { Item, ItemSchema } from '@domain/entities/item.entity';
 import { ItemService } from './item.service';
-import { ItemRepository } from 'src/app/modules/item/item.repository';
+import { ItemRepository } from '@app/modules/item/item.repository';
 
 @Module({
   imports: [

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { Catalog, CatalogSchema } from '../../../domain/entities/catalog.entity';
+import { Catalog, CatalogSchema } from '@domain/entities/catalog.entity';
 import { CatalogService } from './catalog.service';
-import { CatalogRepository } from 'src/app/modules/catalog/catalog.repository';
+import { CatalogRepository } from '@app/modules/catalog/catalog.repository';
 
 @Module({
   imports: [

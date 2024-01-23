@@ -2,7 +2,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ObjectId } from 'mongodb';
 
-import { Catalog } from '../../../domain/entities/catalog.entity';
+import { Catalog } from '@domain/entities/catalog.entity';
 
 export class CatalogRepository {
     constructor(@InjectModel(Catalog.name) private readonly catalogModel: Model<Catalog>) {}
