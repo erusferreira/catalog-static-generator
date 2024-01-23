@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "moduleResolution": "node",
     "module": "commonjs",
     "declaration": true,
@@ -24,5 +24,8 @@
       "@config/*": ["config/*"],
       "@infrastructure/*": ["infrastructure/*"]
     }
-  }
+  },
+  "include": [
+    "src",
+  ],
 }
