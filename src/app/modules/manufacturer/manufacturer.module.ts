@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { Manufacturer, ManufacturerSchema } from 'domain/entities/Manufacturer.entity';
+import { Manufacturer, ManufacturerSchema } from 'domain/entities/manufacturer.entity';
 import { ManufacturerService } from './manufacturer.service';
 import { ManufacturerRepository } from './manufacturer.repository';
 
